@@ -1,5 +1,5 @@
 import {  useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 const Register = () =>{
@@ -48,7 +48,8 @@ const Register = () =>{
                 <input className="input_login" type="password" placeholder="Придумайте пароль" value={regData.password} onChange={(e) => setRegData({ ...regData, password: e.target.value })} />
                 <input className="input_login" type="password" placeholder="Повторите пароль" value={regData.password1} onChange={(e) => setRegData({ ...regData, password1: e.target.value })} />
                 <button className="button_login" onClick={signUp} disabled={!regData.name || !regData.password || !regData.password1}>Зарегистрироваться</button>
-                
+                <span >Уже есть аккаунт?</span>
+                <Link to="/login" >Войдите</Link>
               </div>:
                <h2>Регистрация</h2>
     

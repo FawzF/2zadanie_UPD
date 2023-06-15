@@ -1,7 +1,7 @@
 import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
+import { Link } from 'react-router-dom'
 
 const Welcome = () => {
 
@@ -52,7 +52,8 @@ const Welcome = () => {
             <input className="input_login" placeholder="Ваш логин" value={loginData.name} onChange={(e) => setLoginData({ ...loginData, name: e.target.value })} />
             <input className="input_login" type="password" placeholder="Ваш пароль" value={loginData.password} onChange={(e) => setLoginData({ ...loginData, password: e.target.value })} />
             <button className="button_login" onClick={signIn} disabled={!loginData.name || !loginData.password}>Войти</button>
-            
+            <span >Нет аккаунта?</span>
+            <Link to="/register" >Создайте</Link>
           </div> :
           <div className="form_login">
             <h2>Регистрация</h2>
